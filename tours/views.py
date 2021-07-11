@@ -253,6 +253,8 @@ tour_id = {
 
 tour_main = dict(random.sample (list(tour_id.items()), 6))
 
+depart_tours = dict(random.sample (list(tour_id.items()), 6))
+
 def main_view(request):
 
     return render(request, 'tours/index.html', context={'tour_main': tour_main})
@@ -263,7 +265,8 @@ def departure_view(request, departure):
         departure_city = city[departure]
     except KeyError:
         raise Http404
-    return render(request, 'tours/departure.html', context={'departure_view': departure_city})
+    return render(request, 'tours/departure.html', context={'departure_view': departure_city,
+                                                            'depart_tours': depart_tours})
 
 
 def tour_view(request, pk):

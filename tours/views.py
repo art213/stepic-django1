@@ -251,12 +251,11 @@ tour_id = {
 
 }
 
-tour_main = dict(random.sample (list(tour_id.items()), 6))
+tour_main = dict(random.sample(list(tour_id.items()), 6))
 
-depart_tours = dict(random.sample (list(tour_id.items()), 6))
+depart_tours = dict(random.sample(list(tour_id.items()), 6))
 
 def main_view(request):
-
     return render(request, 'tours/index.html', context={'tour_main': tour_main})
 
 
